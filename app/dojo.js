@@ -17,8 +17,6 @@
 (function () {
   const _a = window.location, pathname = _a.pathname, search = _a.search;
   const distPath = pathname.substring(0, pathname.lastIndexOf("/"));
-  const appPath = distPath.slice(0, distPath.lastIndexOf("/"));
-  const templateAppPath = appPath.slice(0, appPath.lastIndexOf("/"));
   const localeUrlParamRegex = /locale=([\w-]+)/;
   const dojoLocale = search.match(localeUrlParamRegex) ? RegExp.$1 : undefined;
   const config = {
@@ -28,7 +26,7 @@
     packages: [
       { name: "calcite", location: "//s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js", main: "calcite-web.min" },
       { name: "config", location: distPath + "/config" },
-      { name: "ApplicationBase", location: templateAppPath + "/application-base-js", main: "ApplicationBase" },
+      { name: "ApplicationBase", location: distPath + "/application-base-js", main: "ApplicationBase" },
       { name: "Application", location: distPath + "/app", main: "Main" }
     ]
   };
