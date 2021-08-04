@@ -1,0 +1,283 @@
+html {
+  height                   : 100%;
+  font-size                : 100%;
+  -webkit-text-size-adjust : 100%;
+  -moz-text-size-adjust    : 100%;
+  -ms-text-size-adjust     : 100%;
+}
+
+body {
+  min-height  : 100%;
+  margin      : 0;
+  overflow    : hidden;
+  /*font-family : "Noto Serif", sans-serif;*/
+  font-family : "Source Sans Pro", sans-serif;
+}
+
+body * {
+  outline : none;
+}
+
+.esri-info-img {
+  margin-top : 7px;
+}
+
+.audubon-info-img {
+  width           : 80px;
+  height          : 50px;
+  background      : url(../assets/audubon/Audubon_Logo_BLK_Social-small.png) no-repeat;
+  background-size : contain;
+}
+
+.top-nav {
+  background : #006195;
+}
+
+.top-nav * {
+  color : #fff !important;
+}
+
+.top-nav-title {
+  padding-top    : 0.5rem;
+  padding-bottom : 0.5rem;
+}
+
+.top-nav-link {
+  padding : 0.5rem 0 calc(0.5rem - 4px) 0;
+}
+
+.top-nav-link:hover,
+.top-nav-link:focus {
+  border-bottom-color : #f8f8f8;
+}
+
+.tab-contents,
+#left-panel .panel {
+  border-color : #ddd !important;
+}
+
+#view-container {
+  height     : calc(100vh - 175px) !important;
+  margin     : 0;
+  padding    : 0;
+  box-shadow : 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*.esri-widget,.esri-button*/
+.label-blue,
+.esri-attribution,
+.esri-attribution__link,
+.esri-widget-button {
+  background-color : #006195 !important;
+  color            : #fff !important;
+}
+
+#user-thumb-node {
+  height         : 36px;
+  border-radius  : 18px;
+  vertical-align : middle;
+}
+
+.esri-search__input {
+  height : 32px !important;
+}
+
+.esri-print__container {
+  max-height : unset;
+}
+
+.esri-popup h1 {
+  line-height : unset;
+}
+
+.drawer-nav {
+  width : 350px;
+}
+
+.input-error-message.is-active {
+  position : absolute;
+}
+
+.dropdown-menu * {
+  color : #006195 !important;
+}
+
+#loading-node {
+  box-shadow : none;
+}
+
+#loading-node .loader-text {
+  color       : #006195;
+  padding-top : 2.5rem;
+}
+
+#find-compiler-panel {
+  display        : flex;
+  flex-direction : column;
+  height         : calc(100% - 60px);
+}
+
+#search-panel {
+  flex-grow   : 0;
+  flex-shrink : 0;
+}
+
+#circle-candidates-node {
+  flex-grow      : 1;
+  flex-shrink    : 1;
+  display        : flex;
+  flex-direction : column;
+}
+
+#circle-candidates-list {
+  flex-shrink : 1;
+  flex-grow   : 0;
+  overflow-x  : hidden;
+  overflow-y  : auto;
+}
+
+#sections-list {
+  height : calc(100vh - 570px);
+}
+
+#sections-list .dgrid {
+  height   : 100%;
+  overflow : auto;
+  border   : none;
+}
+
+#sections-list .dgrid-selected {
+  /*color            : #004575;*/
+  /*background-color : #d2e9f9;*/
+  color            : #fff;
+  background-color : #006195;
+}
+
+#sections-list .dgrid-no-data {
+  color      : #ccc;
+  font-style : italic;
+  font-size  : 1.5em;
+  padding    : 1.5em;
+  text-align : center;
+}
+
+.actions-node {
+  display : none;
+}
+
+/*.section-node:hover .actions-node*/
+.section-node.dgrid-selected .actions-node {
+  display : inline-block;
+}
+
+.input-error-message.is-active {
+  position : absolute;
+}
+
+#sector-node {
+  height : 120px;
+}
+
+.esri-feature__main-container:empty {
+  padding-top : 1.5em;
+  font-size   : 1.5em;
+  font-style  : italic;
+  text-align  : center;
+  color       : silver;
+}
+
+.esri-feature__main-container:empty:after {
+  content : 'No Selected Sector';
+}
+
+#sector-node table.esri-table {
+  margin-bottom : 0;
+}
+
+#sector-node .esri-popup-renderer__main-container:empty {
+  padding-top : 2em;
+  font-size   : 1.5em;
+  font-style  : italic;
+  text-align  : center;
+  color       : silver;
+}
+
+#sector-node .esri-popup-renderer__main-container:empty:after {
+  content : "Sector Details";
+}
+
+.intersects {
+  border : solid 6px red;
+}
+
+#editing-help-update img {
+  height : 40%;
+}
+
+#options-tabs .tab-section {
+  /*min-height : 160px;*/
+}
+
+#editing-settings select {
+  margin : 0 !important;
+  /*padding : 2px 0 2px 8px !important;*/
+}
+
+#editing-settings input {
+  width  : 100px;
+  margin : 0 !important;
+}
+
+.btn-label-short {
+  display : none !important;
+}
+
+.btn-label-med {
+  display : none !important;
+}
+
+.btn-label-long {
+  display : unset !important;
+}
+
+@media only screen and (max-width : 1500px) and (min-width : 1200px) {
+  .btn-label-short {
+    display : none !important;
+  }
+
+  .btn-label-med {
+    display : unset !important;
+  }
+
+  .btn-label-long {
+    display : none !important;
+  }
+}
+
+@media only screen and (max-width : 1200px) {
+  .btn-label-short {
+    display : unset !important;
+  }
+
+  .btn-label-med {
+    display : none !important;
+  }
+
+  .btn-label-long {
+    display : none !important;
+  }
+}
+
+#videos-container {
+  box-shadow : 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.video-panel {
+  height : 45vh;
+}
+
+.video-panel iframe {
+  height     : 100%;
+  object-fit : contain;
+}
+

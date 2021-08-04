@@ -1,0 +1,269 @@
+
+
+/* used for testing */
+                       kellyjmckay@aol.com
+/* used for testing */
+
+
+
+/**
+ * Modified from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+ *    - uuidv4
+ *
+ * @returns {string}
+ * @private
+ */
+/*generateGUID: function () {
+  return '{xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx}'.replace(/[xy]/g, function (c) {
+    const r = Math.random() * 16 | 0;
+    const v = (c == 'x') ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}*/
+
+/**
+ *
+ * @param polygon
+ */
+/*removeCoincidentPoints: function (polygon) {
+
+  const all_clean_rings = polygon.rings.reduce((clean_rings, ring) => {
+    const clean_ring = [];
+    ring.forEach((coords, coordsIdx) => {
+      if(coordsIdx > 0) {
+        if(JSON.stringify(coords) === JSON.stringify(ring[coordsIdx - 1])) {
+          clean_ring.push(coords);
+        }
+      } else {
+        clean_ring.push(coords);
+      }
+    });
+    if(clean_ring.length >= 3) {
+      clean_rings.push(clean_ring);
+    }
+    return clean_rings;
+  }, []);
+
+
+  let cleanPolygon = null;
+  if(all_clean_rings.length > 0) {
+    cleanPolygon = polygon.clone();
+    cleanPolygon.rings = all_clean_rings;
+  }
+  return cleanPolygon;
+
+},*/
+
+/*const last_vertex = sketch.getPoint(0, evt.vertexIndex);
+         const snap_info = geometryEngine.nearestCoordinate(snap_geometry, last_vertex);
+         if(!snap_info.isEmpty && (snap_info.distance < 500)) {
+           sketch.setPoint(0, evt.vertexIndex, snap_info.coordinate);
+           evt.vertices[evt.vertexIndex] = [snap_info.coordinate.x, snap_info.coordinate.y];
+         }*/
+
+/*
+
+
+if(!geometryEngine.within(newSector, sourceCircle)) {
+          newSector = geometryEngine.intersect(newSector, sourceCircle);
+        }
+        //newSector = geometryEngine.densify(newSector, (view.extent.width / view.width), "meters");
+
+        // newSector = geometryEngine.intersect(evt.graphic.geometry, sourceCircle);
+        // if(newSector != null) {
+
+const adjustToExistingSectors = (sector) => {
+
+            if(sector != null) {
+              //sector = geometryEngine.densify(sector, 25, "meters");
+
+              if(graphicsCollection.length > 0) {
+                graphicsCollection.forEach((sectorFeature) => {
+
+                  if((sector != null) && geometryEngine.intersects(sector, sectorFeature.geometry)) {
+                    sector = geometryEngine.difference(sector, sectorFeature.geometry);
+                    if(sector != null) {
+                      sector = geometryEngine.simplify(sector);
+                    }
+                  }
+
+                });
+              }
+            }
+
+            return sector;
+          };
+
+//const geometryService = new GeometryService({ url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/Geometry/GeometryServer" });
+
+
+this.addSectors = (sectors, type) => {
+            const allSectorFeatures = sectors.reduce((sectorFeatures, sector, sectorIndex) => {
+              const adjustedSector = adjustToExistingSectors(sector);
+              if(adjustedSector != null) {
+                sectorFeatures.push(createSectorFeature(adjustedSector, type, (sectorIndex + 1)));
+              }
+              return sectorFeatures;
+            }, []);
+            return sectorsLayer.applyEdits({ addFeatures: allSectorFeatures }).then((editResults) => {
+              console.info("addSectors::applyEdits", editResults, sectorsLayer);
+            });
+          };
+
+//const minArea = 10000;
+
+let circlePolyline = new Polyline({
+                    spatialReference: sector.spatialReference,
+                    paths: [sourceCircle.rings[0]]
+                  });*/
+
+/*const reshapedSectorsHandles = adjustedSectors.map((adjustedSector) => {
+  const cleanSector = this.removeSlivers(adjustedSector, minArea);
+  promiseUtils.resolve(cleanSector);
+  /!*if(geometryEngine.intersects(cleanSector, circlePolyline)) {
+    return geometryService.reshape(cleanSector, circlePolyline).then((reshapedSector) => {
+      return reshapedSector;
+    });
+  } else {
+    return promiseUtils.resolve(cleanSector);
+  }*!/
+});
+return promiseUtils.eachAlways(reshapedSectorsHandles).then((reshapedSectorsResults) => {
+
+  const adjustedSectorFeatures = reshapedSectorsResults.map(reshapedSectorsResult => {
+    return createSectorFeature(reshapedSectorsResult.value, type);
+  });
+
+  if(adjustedSectorFeatures.length > 0) {
+    return sectorsLayer.applyEdits({ addFeatures: adjustedSectorFeatures }).then((editResults) => {
+      console.info("addSector::applyEdits", editResults, sectorsLayer);
+      return editResults.addFeatureResults;
+    });
+  } else {
+    query(".invalid-message").addClass("hide");
+    domClass.remove("invalid-sketch", "hide");
+    calcite.bus.emit("modal:open", {id:"invalid-sketch-dialog"});
+    return promiseUtils.resolve();
+  }
+});*/
+
+/*
+ // FIND INTERSECTING SECTORS //
+            const sectorPolygons = this.getSectorPolygons();
+            const intersectsPolygons = sectorPolygons.reduce((intersecting, sectorPolygon) => {
+              return geometryEngine.intersects(sectorPolygon, sector) ? intersecting.concat(sectorPolygon) : intersecting;
+            }, []);
+            if(intersectsPolygons.length > 0) {
+
+              let sketchPolyline = new Polyline({
+                spatialReference: sector.spatialReference,
+                paths: [sector.rings[0]]
+              });
+
+              return geometryService.autoComplete(intersectsPolygons, [sketchPolyline]).then((adjustedSectors) => {
+                if(adjustedSectors.length > 0) {
+
+
+                  const adjustedSectorFeatures = adjustedSectors.reduce((sectorFeatures, adjustedSector) => {
+                    let newSector = geometryEngine.intersect(adjustedSector, sourceCircle);
+                    newSector = this.removeSlivers(newSector, minArea);
+                    if(newSector) {
+                      sectorFeatures.push(createSectorFeature(newSector, type));
+                    }
+                    return sectorFeatures;
+                  }, []);
+
+                  if(adjustedSectorFeatures.length > 0) {
+                    return sectorsLayer.applyEdits({ addFeatures: adjustedSectorFeatures }).then((editResults) => {
+                      console.info("addSector::applyEdits", editResults, sectorsLayer);
+                      return editResults.addFeatureResults;
+                    });
+                  } else {
+                    query(".invalid-message").addClass("hide");
+                    domClass.remove("invalid-sketch", "hide");
+                    calcite.bus.emit("modal:open", { id: "invalid-sketch-dialog" });
+                    return promiseUtils.resolve();
+                  }
+                } else {
+                  query(".invalid-message").addClass("hide");
+                  domClass.remove("invalid-sketch", "hide");
+                  calcite.bus.emit("modal:open", { id: "invalid-sketch-dialog" });
+                  return promiseUtils.resolve();
+                }
+              });
+            } else {
+              const newSector = geometryEngine.intersect(sector, sourceCircle);
+              const sectorFeature = createSectorFeature(newSector, type);
+              return sectorsLayer.applyEdits({ addFeatures: [sectorFeature] }).then((editResults) => {
+                console.info("addSector::applyEdits", editResults, sectorsLayer);
+                return editResults.addFeatureResults[0];
+              });
+            }
+ */
+
+/*
+ const adjustedSector = adjustToExistingSectors(sector);
+            if(adjustedSector != null) {
+              const sectorFeature = createSectorFeature(adjustedSector, type);
+              return sectorsLayer.applyEdits({ addFeatures: [sectorFeature] }).then((editResults) => {
+                console.info("addSector::applyEdits", editResults, sectorsLayer);
+              });
+            }
+ */
+
+/*const getMidPoint = (coordsA, coordsB) => {
+       return [
+         coordsA[0] + ((coordsB[0] - coordsA[0]) * 0.5),
+         coordsA[1] + ((coordsB[1] - coordsA[1]) * 0.5)
+       ];
+     };
+     const addMidPoints = (polygon) => {
+       const first_ring = polygon.rings[0];
+       const new_vertices = first_ring.reduce((vertices, coords, coordsIndex, all_coords) => {
+         vertices.push(coords);
+         if(coordsIndex < (first_ring.length - 1)) {
+           vertices.push(getMidPoint(all_coords[coordsIndex + 1], coords));
+         }
+         return vertices;
+       }, []);
+       return new Polygon({
+         spatialReference: polygon.spatialReference.clone(),
+         rings: [new_vertices]
+       });
+     };*/
+
+
+  <!--
+                <div class="panel panel-no-border">
+                  <label class="trailer-0">
+                    <span class="inline-block padding-left-2 text-right">
+                      <label class="toggle-switch trailer-0">
+                        <input id="densify-chk-input" type="checkbox" class="toggle-switch-input" checked>
+                        <span class="toggle-switch-track"></span>
+                        <span class="toggle-switch-label font-size&#45;&#45;1 tooltip" aria-label="Used when creating, clipping, and adding vertices">
+                          <span class="avenir-demi">Densify:</span>
+                          add a vertex every
+                        </span>
+                      </label>
+                    </span>
+                    <span class="inline-block">
+                      <input id="densify-input" class="text-right" type="number" min="100" step="1" value="500">
+                    </span>
+                    <span class="inline-block">meters</span>
+                    <span class="inline-block padding-left-2 text-right">
+                      <label class="toggle-switch trailer-0">
+                        <input id="generalize-chk-input" type="checkbox" class="toggle-switch-input">
+                        <span class="toggle-switch-track"></span>
+                        <span class="toggle-switch-label font-size&#45;&#45;1 tooltip" aria-label="Used when creating and clipping">
+                          <span class="avenir-demi">Generalize:</span>
+                          maximum deviation
+                        </span>
+                      </label>
+                    </span>
+                    <span class="inline-block">
+                      <input id="generalize-input" class="text-right" type="number" min="1" step="1" value="5">
+                    </span>
+                    <span class="inline-block">meters</span>
+                  </label>
+                </div>
+                -->

@@ -1,0 +1,728 @@
+{
+  "test_1": {
+    "operationalLayers": [
+      {
+        "id": "VectorTile_1970",
+        "title": "Light Gray Base",
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "token": null,
+        "type": "VectorTileLayer",
+        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/1e47168d181248e491541ffd5a91c0de/resources/styles/root.json"
+      },
+      {
+        "id": "CBC118_324",
+        "opacity": 1,
+        "disablePopup": true,
+        "title": "CBC 118 Circles",
+        "url": "https://gis.audubon.org/arcgisweb/rest/services/CBC/CBC118/MapServer/1",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "Abbrev = 'IAPC'",
+          "drawingInfo": {
+            "renderer": {
+              "type": "uniqueValue",
+              "field1": "ParticipantEnrollmentStatus",
+              "defaultLabel": "Other",
+              "defaultSymbol": {
+                "type": "esriSFS",
+                "color": [
+                  170,
+                  170,
+                  170,
+                  15
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "color": [
+                    153,
+                    153,
+                    153,
+                    128
+                  ],
+                  "width": 0.75,
+                  "style": "esriSLSSolid"
+                },
+                "style": "esriSFSSolid"
+              },
+              "uniqueValueInfos": [
+                {
+                  "label": "Not open",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      255,
+                      0,
+                      0,
+                      15
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        168,
+                        0,
+                        0,
+                        255
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Not open"
+                },
+                {
+                  "label": "Open for pre-reg",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      76,
+                      230,
+                      0,
+                      13
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        56,
+                        168,
+                        0,
+                        128
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Open for pre-reg"
+                },
+                {
+                  "label": "Contact compiler",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      230,
+                      230,
+                      0,
+                      13
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        168,
+                        168,
+                        0,
+                        128
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Contact compiler"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "CBC_118_Sectors_4557",
+        "opacity": 1,
+        "disablePopup": true,
+        "title": "CBC 118 Sectors",
+        "url": "https://services1.arcgis.com/lDFzr3JyGEn5Eymu/ArcGIS/rest/services/CBC_118_Sectors/FeatureServer/0",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "circle_id = 'IAPC'"
+        },
+        "popupInfo": {
+          "showAttachments": true,
+          "popupElements": [
+            {
+              "type": "fields"
+            },
+            {
+              "type": "attachments",
+              "displayType": "list"
+            }
+          ],
+          "fieldInfos": [
+            {
+              "fieldName": "OBJECTID",
+              "label": "OBJECTID",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "circle_id",
+              "label": "Circle ID",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_id",
+              "label": "Sector ID",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Area",
+              "label": "Shape__Area",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Length",
+              "label": "Shape__Length",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "GlobalID",
+              "label": "GlobalID",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_name",
+              "label": "Sector Name",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_type",
+              "label": "Sector Type",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Area_2",
+              "label": "Shape__Area_2",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Length_2",
+              "label": "Shape__Length_2",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            }
+          ],
+          "title": "sectors"
+        }
+      },
+      {
+        "id": "CBC118_7071",
+        "opacity": 0.88,
+        "disablePopup": true,
+        "title": "CBC 118 Locations",
+        "url": "https://gis.audubon.org/arcgisweb/rest/services/CBC/CBC118/MapServer/0",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "Abbrev = 'IAPC'"
+        }
+      },
+      {
+        "id": "164c808e520-layer-0",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "164c808e521-layer-1",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "164c808e521-layer-2",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "VectorTile_7117",
+        "title": "Light Gray Reference",
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "token": null,
+        "type": "VectorTileLayer",
+        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/b11b54e79acf4f9d8f6fbbdd5db97547/resources/styles/root.json"
+      }
+    ],
+    "mapOptions": {
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -10098894.120350443,
+        "ymin": 5098680.910518864,
+        "xmax": -10017565.122255124,
+        "ymax": 5148135.667819306
+      },
+      "spatialReference": {
+        "latestWkid": 3857,
+        "wkid": 102100
+      },
+      "showAttribution": true,
+      "scale": 288895.277144
+    },
+    "exportOptions": {
+      "dpi": 96
+    },
+    "layoutOptions": {
+      "titleText": "IAPC: Princeton-Camanche",
+      "authorText": "Kelly McKay",
+      "copyrightText": "",
+      "scaleBarOptions": {},
+      "legendOptions": {
+        "operationalLayers": [
+          {
+            "id": "CBC118_324"
+          },
+          {
+            "id": "CBC_118_Sectors_4557"
+          },
+          {
+            "id": "CBC118_7071"
+          },
+          {
+            "id": "164c808e520-layer-0"
+          },
+          {
+            "id": "164c808e521-layer-1"
+          },
+          {
+            "id": "164c808e521-layer-2"
+          }
+        ]
+      }
+    }
+  },
+  "test_2": {
+    "operationalLayers": [
+      {
+        "id": "VectorTile_1970",
+        "title": "Light Gray Base",
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "token": null,
+        "type": "VectorTileLayer",
+        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/1e47168d181248e491541ffd5a91c0de/resources/styles/root.json"
+      },
+      {
+        "id": "CBC118_324",
+        "opacity": 1,
+        "disablePopup": true,
+        "title": "CBC 118 Circles",
+        "url": "https://gis.audubon.org/arcgisweb/rest/services/CBC/CBC118/MapServer/1",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "Abbrev = 'IAPC'",
+          "drawingInfo": {
+            "renderer": {
+              "type": "uniqueValue",
+              "field1": "ParticipantEnrollmentStatus",
+              "defaultLabel": "Other",
+              "defaultSymbol": {
+                "type": "esriSFS",
+                "color": [
+                  170,
+                  170,
+                  170,
+                  15
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "color": [
+                    153,
+                    153,
+                    153,
+                    128
+                  ],
+                  "width": 0.75,
+                  "style": "esriSLSSolid"
+                },
+                "style": "esriSFSSolid"
+              },
+              "uniqueValueInfos": [
+                {
+                  "label": "Not open",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      255,
+                      0,
+                      0,
+                      15
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        168,
+                        0,
+                        0,
+                        255
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Not open"
+                },
+                {
+                  "label": "Open for pre-reg",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      76,
+                      230,
+                      0,
+                      13
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        56,
+                        168,
+                        0,
+                        128
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Open for pre-reg"
+                },
+                {
+                  "label": "Contact compiler",
+                  "symbol": {
+                    "type": "esriSFS",
+                    "color": [
+                      230,
+                      230,
+                      0,
+                      13
+                    ],
+                    "outline": {
+                      "type": "esriSLS",
+                      "color": [
+                        168,
+                        168,
+                        0,
+                        128
+                      ],
+                      "width": 1.5,
+                      "style": "esriSLSSolid"
+                    },
+                    "style": "esriSFSSolid"
+                  },
+                  "value": "Contact compiler"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "CBC_118_Sectors_4557",
+        "opacity": 1,
+        "disablePopup": true,
+        "title": "CBC 118 Sectors",
+        "url": "https://services1.arcgis.com/lDFzr3JyGEn5Eymu/ArcGIS/rest/services/CBC_118_Sectors/FeatureServer/0",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "circle_id = 'IAPC'"
+        },
+        "popupInfo": {
+          "showAttachments": true,
+          "popupElements": [
+            {
+              "type": "fields"
+            },
+            {
+              "type": "attachments",
+              "displayType": "list"
+            }
+          ],
+          "fieldInfos": [
+            {
+              "fieldName": "OBJECTID",
+              "label": "OBJECTID",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "circle_id",
+              "label": "Circle ID",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_id",
+              "label": "Sector ID",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Area",
+              "label": "Shape__Area",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Length",
+              "label": "Shape__Length",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "GlobalID",
+              "label": "GlobalID",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_name",
+              "label": "Sector Name",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "sector_type",
+              "label": "Sector Type",
+              "isEditable": true,
+              "tooltip": "",
+              "visible": true,
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Area_2",
+              "label": "Shape__Area_2",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            },
+            {
+              "fieldName": "Shape__Length_2",
+              "label": "Shape__Length_2",
+              "isEditable": false,
+              "tooltip": "",
+              "visible": false,
+              "format": {
+                "places": 2,
+                "digitSeparator": true
+              },
+              "stringFieldOption": "textbox"
+            }
+          ],
+          "title": "sectors"
+        }
+      },
+      {
+        "id": "CBC118_7071",
+        "opacity": 0.88,
+        "disablePopup": true,
+        "title": "CBC 118 Locations",
+        "url": "https://gis.audubon.org/arcgisweb/rest/services/CBC/CBC118/MapServer/0",
+        "visibility": true,
+        "layerType": "ArcGISFeatureLayer",
+        "layerDefinition": {
+          "definitionExpression": "Abbrev = 'IAPC'"
+        }
+      },
+      {
+        "id": "164c808e520-layer-0",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "164c808e521-layer-1",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "164c808e521-layer-2",
+        "title": null,
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "url": null,
+        "token": null
+      },
+      {
+        "id": "VectorTile_7117",
+        "title": "Light Gray Reference",
+        "opacity": 1,
+        "minScale": 0,
+        "maxScale": 0,
+        "token": null,
+        "type": "VectorTileLayer",
+        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/b11b54e79acf4f9d8f6fbbdd5db97547/resources/styles/root.json"
+      }
+    ],
+    "mapOptions": {
+      "extent": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -10098894.120350443,
+        "ymin": 5098680.910518864,
+        "xmax": -10017565.122255124,
+        "ymax": 5148135.667819306
+      },
+      "spatialReference": {
+        "latestWkid": 3857,
+        "wkid": 102100
+      },
+      "showAttribution": true,
+      "scale": 288895.277144
+    },
+    "exportOptions": {
+      "dpi": 96
+    },
+    "layoutOptions": {
+      "titleText": "IAPC: Princeton-Camanche",
+      "authorText": "Kelly McKay",
+      "copyrightText": "",
+      "scaleBarOptions": {},
+      "legendOptions": {
+        "operationalLayers": [
+          {
+            "id": "CBC118_324"
+          },
+          {
+            "id": "CBC_118_Sectors_4557"
+          },
+          {
+            "id": "CBC118_7071"
+          },
+          {
+            "id": "164c808e520-layer-0"
+          },
+          {
+            "id": "164c808e521-layer-1"
+          },
+          {
+            "id": "164c808e521-layer-2"
+          },
+          {
+            "id": "CBC118_324"
+          },
+          {
+            "id": "CBC_118_Sectors_4557"
+          },
+          {
+            "id": "CBC118_7071"
+          },
+          {
+            "id": "164c808e520-layer-0"
+          },
+          {
+            "id": "164c808e521-layer-1"
+          },
+          {
+            "id": "164c808e521-layer-2"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
